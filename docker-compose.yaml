@@ -1,0 +1,18 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+    links:
+      - mongodb
+    env_file:
+      - ./.env.local
+      - ./.env
+  mongodb:
+    image: 'mongo:latest'
+    volumes:
+      - 'mongodb_data:/data/db'
+volumes:
+  mongodb_data:

@@ -27,3 +27,10 @@ This API provides the endpoints:
 {
   "email": "subscriberEmail@gmail.com"
 }
+```
+## DEPLOYMENT
+
+easily deploy to aws lambda using commands below :
+
+```sam package --output-template-file packaged.yaml --s3-bucket S3_DESTINATION_BUCKET
+sam deploy --template-file packaged.yaml --region eu-north-1 --capabilities CAPABILITY_IAM --stack-name newsletter-api```
